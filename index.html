@@ -3,50 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled List</title>
+    <title>QuizDown Quiz List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
             text-align: center;
+            margin: 20px;
         }
-        .container {
-            max-width: 600px;
-            background: #fff;
-            padding: 20px;
-            margin: 0 auto;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
+        h1 {
             color: #333;
         }
         ul {
             list-style: none;
             padding: 0;
         }
-        ul li {
-            background: #007BFF;
-            color: white;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: left;
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Well-Formatted List</h2>
-        <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
-        </ul>
-    </div>
+
+    <h1>QuizDown Quiz List</h1>
+    <p>Select a quiz to start:</p>
+
+    <ul>
+        <li><a href="quiz1.html">Quiz 1: General Knowledge</a></li>
+        <li><a href="quiz2.html">Quiz 2: Machine Learning</a></li>
+        <li><a href="quiz3.html">Quiz 3: Python Basics</a></li>
+        <!-- Add more quizzes as needed -->
+    </ul>
+
 </body>
 </html>
