@@ -8,55 +8,151 @@
     <title>QuizDown Quiz</title>
     <link rel="stylesheet" href="quizdown.css">
     <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #certificate {
+            display: none;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            background-color: #f9f9f9;
+            page-break-before: always; /* Ensures certificate starts on a new page */
+        }
+        #certificate h2 {
+            margin-bottom: 10px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            #certificate {
+                display: block; /* Show certificate on print */
+            }
+            #quizContent {
+                display: block; /* Ensure quiz content is printed */
+            }
+            .button-container {
+                display: none; /* Hide buttons when printing */
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="quizdown">
-        # What is the capital of Berlin? 
-        
-        In this question, you are asked a **very** difficult question. 
-        
-        > Do some research! 
-        
-        - [x] Berlin
-            > This is the correct answer. 
-        - [ ] Stuttgart 
-        - [ ] Cologne 
-            > Cologne is the fourth-largest city. 
-        - [ ] Düsseldorf 
-        
-        # Please bring the following into order! 
-        
-        Below you find the steps of the machine learning workflow.  
-        Do you find the **correct order**? 
-        
-        > The model selection happens before the `final model evaluation`!
-        
-        1. Get the data  
-        2. Explore the data  
-        3. Train test split with `train_test_split()`  
-        4. Feature engineering  
-        5. Model selection  
-        6. Model evaluation  
-        7. Deployment  
-        
-        # What is the value of `y`? 
-        
-        ```python
-        x = 2+2
-        y = x+2
-        print(y)
-        ``` 
-        
-        - [ ] `2`  
-        - [x] `6`  
-        - [ ] `None`  
-        - [ ] `9`
+
+    <div class="quiz-container">
+        <h1>QuizDown Quiz</h1>
+        <p>Enter your name to begin:</p>
+        <input type="text" id="userName" placeholder="Your Name">
+        <button class="button" onclick="startQuiz()">Start Quiz</button>
+
+        <div id="quizContent" class="disabled">
+            <div class="quizdown">
+                # What is the capital of Berlin? 
+                - [x] Berlin
+                - [ ] Stuttgart 
+                - [ ] Cologne 
+                - [ ] Düsseldorf 
+
+                # Please bring the following into order! 
+                1. Get the data  
+                2. Explore the data  
+                3. Train test split with `train_test_split()`  
+                4. Feature engineering  
+                5. Model selection  
+                6. Model evaluation  
+                7. Deployment  
+
+                # What is the value of `y`? 
+                ```python
+                x = 2+2
+                y = x+2
+                print(y)
+                ``` 
+                - [ ] `2`  
+                - [x] `6`  
+                - [ ] `None`  
+                - [ ] `9`
+            </div>
+
+            <div class="button-container">
+                <button class="button" id="generateCert" onclick="generateCertificate()" style="display: none;">Get Certificate</button>
+                <button class="button" id="printCert" onclick="printCertificate()" style="display: none;">Print Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate (Separate Page for Printing) -->
+    <div id="certificate">
+        <h2>Certificate of Completion</h2>
+        <p>This certifies that <strong id="certName"></strong> has successfully completed the quiz.</p>
+        <p>Completion Date: <strong id="completionDate"></strong></p>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             quizdown.init();
         });
+
+        function startQuiz() {
+            let name = document.getElementById("userName").value.trim();
+            if (name === "") {
+                alert("Please enter your name to start the quiz.");
+                return;
+            }
+
+            document.getElementById("quizContent").classList.remove("disabled");
+            document.getElementById("generateCert").style.display = "inline-block";
+        }
+
+        function generateCertificate() {
+            let name = document.getElementById("userName").value.trim();
+            if (name === "") {
+                alert("Please enter your name to generate the certificate.");
+                return;
+            }
+
+            // Get current date in DD/MM/YYYY format
+            let today = new Date();
+            let formattedDate = today.getDate().toString().padStart(2, '0') + '/' + 
+                                (today.getMonth() + 1).toString().padStart(2, '0') + '/' + 
+                                today.getFullYear();
+
+            // Update certificate details
+            document.getElementById("certName").innerText = name;
+            document.getElementById("completionDate").innerText = formattedDate;
+
+            document.getElementById("certificate").style.display = "block";
+            document.getElementById("printCert").style.display = "inline-block";
+        }
+
+        function printCertificate() {
+            window.print();
+        }
     </script>
+
 </body>
 </html>
