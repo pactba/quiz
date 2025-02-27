@@ -1,0 +1,270 @@
+<!-- DOCS: https://github.com/bonartm/quizdown-js/blob/main/docs/syntax.md -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizDown Quiz</title>
+    <script type="text/javascript" nonce="af5e3bcdb1034226be5bda5a673" src="//local.adguard.org?ts=1740530644524&amp;type=content-script&amp;dmn=pactba.github.io&amp;url=https%3A%2F%2Fpactba.github.io%2Fquiz%2Ftest%2Ftest.html&amp;app=org.mozilla.firefox&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-push&amp;st-loc&amp;st-java&amp;st-dnt"></script><link rel="stylesheet" href="quizdown.css">
+    <script src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #certificate {
+            display: none;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            background-color: #f9f9f9;
+            page-break-before: always; /* Ensures certificate starts on a new page */
+        }
+        #certificate h2 {
+            margin-bottom: 10px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .disabled {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            #certificate {
+                display: block; /* Show certificate on print */
+            }
+            #quizContent {
+                display: block; /* Ensure quiz content is printed */
+            }
+            .button-container {
+                display: none; /* Hide buttons when printing */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>QuizDown Quiz</h1>
+        <p>Enter your name to begin:</p>
+        <input type="text" id="userName" placeholder="Your Name">
+        <button class="button" onclick="startQuiz()">Start Quiz</button>
+
+        <div id="quizContent" class="disabled">
+            <div class="quizdown">
+
+
+# Which of the following is **NOT** a defining attitude of science that guides the work of all scientists?
+
+This question tests your knowledge of the core principles that define science as a discipline. Consider which of the options aligns with objective, empirical investigation.
+
+> Think about what makes science different from other ways of understanding the world!
+
+- [ ] Determinism
+> Determinism is a core assumption in science [1].
+- [ ] Empiricism
+> Empiricism is the practice of objective observation and measurement and a key component of science [2, 3].
+- [ ] Experimentation
+> Experimentation, involving controlled comparisons, is a basic strategy of most sciences [4-6].
+- [x] Mentalism
+> This is the correct answer. **Mentalism**, which relies on unobservable constructs, is contrary to the empirical approach of science [7, 8].
+
+# According to the source text, what is the **primary reason** science is a self-correcting enterprise that ultimately gets it right?
+
+This question focuses on how scientific knowledge is validated and refined over time.
+
+> What mechanism ensures that scientific findings are reliable and mistakes are identified?
+
+- [ ] The infallibility of scientists
+- [ ] The inherent honesty of scientists
+- [x] Replication
+> This is the correct answer. **Replication** is key to verifying findings and correcting mistakes in science [9]. It ensures the reliability and usefulness of scientific discoveries.
+- [ ] Philosophic doubt
+> While philosophic doubt is important, replication is the primary reason [9, 10].
+
+# What is the **philosophical position** that the truth value of a statement is a function of how well the statement promotes effective action?
+
+This question requires you to identify a philosophical stance related to the practical utility of knowledge.
+
+> Which philosophy emphasizes the importance of effective action as a measure of truth?
+
+- [ ] Determinism
+> Determinism is the assumption that the universe is lawful and orderly [1].
+- [ ] Empiricism
+> Empiricism involves objective observation and measurement [2, 3].
+- [ ] Parsimony
+> Parsimony favours simpler explanations [11].
+- [x] Pragmatism
+> This is the correct answer. **Pragmatism** values effective action as the measure of truth [12]. Consider how well a statement enables successful intervention.
+
+# According to the source text, what is the **key point of behaviourism**?
+
+This question asks you to identify the central tenet of behaviourism as it relates to understanding and influencing behaviour.
+
+> What does behaviourism consider to be the primary influence on behaviour?
+
+- [ ] Understanding inner selves
+- [x] Arranging environments to make desired behaviours more probable
+> This is the correct answer. **Behaviourism** focuses on how the environment influences behaviour [13]. The goal is to arrange environments to make desired behaviours more likely.
+- [ ] Remaking inner selves
+- [ ] Understanding thoughts and feelings
+> Behaviourism focuses on observable behaviours rather than internal states [7, 14, 15].
+
+# What is the **hallmark of ABA** in the logic of behaviour analysis?
+
+This question tests your understanding of the defining characteristics of applied behaviour analysis.
+
+> What is a key feature of ABA that distinguishes it from other approaches?
+
+- [x] Constant reaction to a lack of progress
+> This is the correct answer. Applied behaviour analysis is characterised by **continuous monitoring and adjustment based on data** [16, 17]. A constant reaction to a lack of progress is a definitive hallmark of ABA.
+- [ ] Ignoring failures
+> ABA embraces the lessons learned from failures [16, 17].
+- [ ] Valuing false knowledge
+- [ ] Guessing and guessing again
+> ABA uses a scientific approach of testing and refinement rather than guesswork [18, 19].
+
+# According to Baer, Wolf, and Risley (1968), which of the following is **NOT** one of the seven dimensions of applied behaviour analysis?
+
+This question requires you to recall the key dimensions that define ABA according to a seminal work in the field.
+
+> Think about the characteristics that define what ABA is and what it aims to achieve!
+
+- [ ] Applied
+> The applied dimension focuses on socially significant behaviours [20].
+- [ ] Behavioral
+> The behavioral dimension entails precise measurement of behaviour [21].
+- [ ] General
+> The generality dimension produces behaviour changes that last over time [22].
+- [x] Hypothetical
+> This is the correct answer. The seven dimensions are **applied, behavioral, analytic, technological, conceptually systematic, effective, and generality** [23-26].
+
+# What does it mean for a study in applied behaviour analysis to be **conceptually systematic**?
+
+This question tests your understanding of how interventions in ABA are linked to basic principles of behaviour.
+
+> How are procedures and interpretations described in a conceptually systematic approach?
+
+- [ ] Procedures are described in vague terms for broad interpretation.
+- [ ] Procedures are derived from complex statistical analyses.
+- [x] Procedures and interpretations are described in terms of relevant principles of behavior.
+> This is the correct answer. A conceptually systematic approach ensures that interventions are **linked to basic principles of behaviour** [27]. This integration helps build a cohesive and expandable technology.
+- [ ] Procedures are based on hypothetical constructs.
+> ABA avoids hypothetical constructs, preferring observable and measurable events [8].
+
+# What are the **twin goals** of applied behaviour analysis?
+
+This question asks you to identify the two primary objectives that ABA seeks to achieve.
+
+> What two key outcomes does ABA strive for?
+
+- [ ] Description and Prediction
+- [x] Improvement and Understanding
+> This is the correct answer. ABA aims to both **improve socially significant behaviors and understand the variables responsible for those changes** [28].
+- [ ] Control and Description
+- [ ] Prediction and Control
+> While control is a level of scientific understanding, the twin goals are improvement and understanding [29].
+
+# What is the **primary activity** in the experimental analysis of behavior (EAB)?
+
+This question focuses on the main activities conducted within the realm of EAB.
+
+> What type of experiments are conducted in EAB, and what is their purpose?
+
+- [ ] Helping people behave more successfully
+- [ ] Designing, conducting, interpreting, and reporting applied experiments
+- [x] Designing, conducting, interpreting, and reporting basic experiments
+> This is the correct answer. **EAB focuses on basic research to discover fundamental principles of behaviour**, often in laboratory settings [30, 31].
+- [ ] Conceptual and philosophical analysis
+> This is more aligned with radical behaviourism [32].
+
+# According to the source text, what is **translational research**?
+
+This question requires you to identify the role and scope of translational research within behaviour analysis.
+
+> How does translational research relate to basic and applied research?
+
+- [ ] Research that only focuses on basic principles of behaviour
+- [ ] Research that only focuses on applied settings
+- [x] Basic research that "bridges" basic and applied areas
+> This is the correct answer. Translational research **connects basic and applied research, fostering a bidirectional exchange of knowledge** [33].
+- [ ] Research that is independent of both basic and applied domains
+            </div>
+
+            <div class="button-container">
+                <button class="button" id="generateCert" onclick="generateCertificate()" style="display: none;">Get Certificate</button>
+                <button class="button" id="printCert" onclick="printCertificate()" style="display: none;">Print Certificate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate (Separate Page for Printing) -->
+    <div id="certificate">
+        <h2>Certificate of Completion</h2>
+        <p>This certifies that <strong id="certName"></strong> has successfully completed the quiz.</p>
+        <p>Completion Date: <strong id="completionDate"></strong></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            quizdown.init();
+        });
+
+        function startQuiz() {
+            let name = document.getElementById("userName").value.trim();
+            if (name === "") {
+                alert("Please enter your name to start the quiz.");
+                return;
+            }
+
+            document.getElementById("quizContent").classList.remove("disabled");
+            document.getElementById("generateCert").style.display = "inline-block";
+        }
+
+        function generateCertificate() {
+            let name = document.getElementById("userName").value.trim();
+            if (name === "") {
+                alert("Please enter your name to generate the certificate.");
+                return;
+            }
+
+            // Get current date in DD/MM/YYYY format
+            let today = new Date();
+            let formattedDate = today.getDate().toString().padStart(2, '0') + '/' + 
+                                (today.getMonth() + 1).toString().padStart(2, '0') + '/' + 
+                                today.getFullYear();
+
+            // Update certificate details
+            document.getElementById("certName").innerText = name;
+            document.getElementById("completionDate").innerText = formattedDate;
+
+            document.getElementById("certificate").style.display = "block";
+            document.getElementById("printCert").style.display = "inline-block";
+        }
+
+        function printCertificate() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>
