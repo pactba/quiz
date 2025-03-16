@@ -3,3 +3,5 @@
 
 - [Chapter 1](https://pactba.github.io/quiz/aba3e/ch1-01.html)
 - [Chapter 2](https://pactba.github.io/quiz/aba3e/ch2-01.html)
+- [Chapter 3](https://pactba.github.io/quiz/aba3e/ch3-01.html)
+
